@@ -1,4 +1,5 @@
 import { normalize } from "../utils/normalize";
+import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
@@ -6,10 +7,14 @@ export default function Home({ posts }) {
       {/* loop over the posts and show in UI */}
       {posts &&
         posts.map((post) => (
-          <div key={post.id}>
-            {<h2>{post.Title}</h2>}
-            {<pre>{post.User.username}</pre>}
-          </div>
+          <Link href={`/${post.Slug}`}>
+            <a>
+              <div key={post.id}>
+                {<h2>{post.Title}</h2>}
+                {<pre>{post.User.username}</pre>}
+              </div>
+            </a>
+          </Link>
         ))}
       {/* {console.log(posts)} */}
     </div>
