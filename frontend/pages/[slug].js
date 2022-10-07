@@ -1,7 +1,15 @@
 import { normalize } from "../utils/normalize";
+import Link from "next/link";
 
 export default function Post({ post }) {
-  return <div>{post.Title}</div>;
+  return (
+    <div>
+      <Link href={`/`}>
+        <a>Go Home</a>
+      </Link>
+      <h2>{post.Title}</h2>
+    </div>
+  );
 }
 
 // tell next.js how many pages they are
