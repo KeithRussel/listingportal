@@ -32,6 +32,21 @@
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "post"
+    },
+    "Opening": {
+      "type": "time"
+    },
+    "Closing": {
+      "type": "time"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Town": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::town.town",
+      "inversedBy": "posts"
     }
   }
 }

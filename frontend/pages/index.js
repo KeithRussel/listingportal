@@ -7,7 +7,7 @@ export default function Home({ posts }) {
       {/* loop over the posts and show in UI */}
       {posts &&
         posts.map((post) => (
-          <Link href={`/${post.Slug}`}>
+          <Link href={`/posts/${post.Slug}`}>
             <a>
               <div key={post.id}>
                 {<h2>{post.Title}</h2>}
