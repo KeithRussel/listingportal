@@ -7,7 +7,15 @@ export default function Post({ towns }) {
       <Link href={`/`}>
         <a>Go Home</a>
       </Link>
-      {towns && towns.map((town) => <h2>{town.Town}</h2>)}
+      {/* Show Town Categories */}
+      {towns &&
+        towns.map((town) => (
+          <Link key={town.id} href={`/towns/${town.Town}`}>
+            <a>
+              <h2>{town.Town}</h2>
+            </a>
+          </Link>
+        ))}
     </div>
   );
 }

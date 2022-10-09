@@ -3,21 +3,30 @@ import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
-    <div>
-      {/* loop over the posts and show in UI */}
-      {posts &&
-        posts.map((post) => (
-          <Link href={`/posts/${post.Slug}`}>
-            <a>
-              <div key={post.id}>
-                {<h2>{post.Title}</h2>}
-                {<pre>{post.User.username}</pre>}
-              </div>
-            </a>
-          </Link>
-        ))}
-      {/* {console.log(posts)} */}
-    </div>
+    <>
+      <div>
+        {/* loop over the posts and show in UI */}
+        <h1>Fetch All Posts</h1>
+        {posts &&
+          posts.map((post) => (
+            <Link key={post.id} href={`/posts/${post.Slug}`}>
+              <a>
+                <div>
+                  {<h2>{post.Title}</h2>}
+                  {<pre>{post.User.username}</pre>}
+                </div>
+              </a>
+            </Link>
+          ))}
+      </div>
+      <div>
+        <Link href={`/towns`}>
+          <a>
+            <h3>Towns Category</h3>
+          </a>
+        </Link>
+      </div>
+    </>
   );
 }
 
