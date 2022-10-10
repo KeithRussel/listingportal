@@ -1,6 +1,5 @@
 import { normalize } from "../utils/normalize";
 import Link from "next/link";
-import Header from "../components/Header/Header";
 import Layout from "../components/Layout/Layout";
 
 export default function Home({ posts }) {
