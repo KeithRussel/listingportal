@@ -1,31 +1,35 @@
 import { normalize } from "../utils/normalize";
 import Link from "next/link";
+import Header from "../components/Header/Header";
+import Layout from "../components/Layout/Layout";
 
 export default function Home({ posts }) {
   return (
     <>
-      <div>
-        {/* loop over the posts and show in UI */}
-        <h1>Fetch All Posts</h1>
-        {posts &&
-          posts.map((post) => (
-            <Link key={post.id} href={`/posts/${post.Slug}`}>
-              <a>
-                <div>
-                  {<h2>{post.Title}</h2>}
-                  {<pre>{post.User.username}</pre>}
-                </div>
-              </a>
-            </Link>
-          ))}
-      </div>
-      <div>
-        <Link href={`/towns`}>
-          <a>
-            <h3>Towns Category</h3>
-          </a>
-        </Link>
-      </div>
+      <Layout>
+        <div>
+          {/* loop over the posts and show in UI */}
+          <h1>Fetch All Posts</h1>
+          {posts &&
+            posts.map((post) => (
+              <Link key={post.id} href={`/posts/${post.Slug}`}>
+                <a>
+                  <div>
+                    {<h2>{post.Title}</h2>}
+                    {<pre>{post.User.username}</pre>}
+                  </div>
+                </a>
+              </Link>
+            ))}
+        </div>
+        <div>
+          <Link href={`/towns`}>
+            <a>
+              <h3>Towns Category</h3>
+            </a>
+          </Link>
+        </div>
+      </Layout>
     </>
   );
 }
