@@ -1,15 +1,14 @@
 import React from "react";
 import style from "./Button.module.css";
+import Link from "next/link";
 
 const Button = ({ label, color }) => {
   return (
-    <button
-      type="button"
-      style={{ backgroundColor: color }}
-      className={style.primaryBtn}
-    >
-      {label}
-    </button>
+    <Link href={`/towns`}>
+      <a style={{ backgroundColor: color }} className={style.primaryBtn}>
+        {label}
+      </a>
+    </Link>
   );
 };
 
