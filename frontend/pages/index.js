@@ -1,11 +1,13 @@
 import { normalize } from "../utils/normalize";
 import Link from "next/link";
 import Layout from "../components/Layout/Layout";
+import Hero from "../components/Hero/Hero";
 
 export default function Home({ posts }) {
   return (
     <>
       <Layout>
+        <Hero />
         <div>
           {/* loop over the posts and show in UI */}
           <h1>Fetch All Posts</h1>
