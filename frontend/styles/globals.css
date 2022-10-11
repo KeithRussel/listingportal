@@ -7,6 +7,13 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+:root {
+  --primary-dark: #112D4E;
+  --secondary-dark: #3F72AF;
+  --primary-light: #F9F7F7;
+  --secondary-light: #DBE2EF;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', sans-serif;
 }
@@ -14,6 +21,13 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button[type='button'] {
+  padding: 1rem;
+  background-color: var(--primary-dark);
+  border: none;
+  cursor: pointer;
 }
 
 * {
