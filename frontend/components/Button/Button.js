@@ -9,9 +9,9 @@ let PrimaryBtn = styled("a")`
   padding: 1rem;
 `;
 
-const Button = ({ label, color }) => {
+const Button = ({ label, color, btnLink }) => {
   return (
-    <Link href={`/towns`}>
+    <Link href={btnLink}>
       <PrimaryBtn style={{ backgroundColor: color }}>{label}</PrimaryBtn>
     </Link>
   );
@@ -20,6 +20,7 @@ const Button = ({ label, color }) => {
 Button.defaultProps = {
   label: "Discover More",
   color: "var(--primary-dark)",
+  btnLink: "/towns",
 };
 
 export default Button;
