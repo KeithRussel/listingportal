@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./Hero.module.css";
 import styled from "@emotion/styled";
 
 let Card = styled("div")`

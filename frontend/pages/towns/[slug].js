@@ -1,15 +1,23 @@
 import { normalize } from "../../utils/normalize";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Layout from "../../components/Layout/Layout";
 
 export default function Town({ postsByTown }) {
+  const router = useRouter();
+  const { slug } = router.query;
+
   return (
-    <div>
-      <Link href={`/`}>
-        <a>Go Home</a>
-      </Link>
-      {postsByTown &&
-        postsByTown.map((post) => <h2 key={post.id}>{post.Title}</h2>)}
-    </div>
+    <Layout>
+      <div>
+        <Link href={`/`}>
+          <a>Go Home</a>
+        </Link>
+        <h2>{`List of Business in ${slug}`}</h2>
+        {postsByTown &&
+          postsByTown.map((post) => <h2 key={post.id}>{post.Title}</h2>)}
+      </div>
+    </Layout>
   );
 }
 

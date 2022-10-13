@@ -1,13 +1,18 @@
 import React from "react";
-import style from "./Button.module.css";
 import Link from "next/link";
+import styled from "@emotion/styled";
+
+let PrimaryBtn = styled("a")`
+  border-radius: 10px;
+  color: var(--primary-light);
+  cursor: pointer;
+  padding: 1rem;
+`;
 
 const Button = ({ label, color }) => {
   return (
     <Link href={`/towns`}>
-      <a style={{ backgroundColor: color }} className={style.primaryBtn}>
-        {label}
-      </a>
+      <PrimaryBtn style={{ backgroundColor: color }}>{label}</PrimaryBtn>
     </Link>
   );
 };

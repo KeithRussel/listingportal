@@ -1,13 +1,33 @@
 import React from "react";
-import styles from "../Header/Header.module.css";
 import Link from "next/link";
+import styled from "@emotion/styled";
+
+let Wrapper = styled("div")`
+  display: flex;
+  width: 70%;
+  margin: auto;
+  align-items: center;
+
+  & > .nav {
+    margin-left: auto;
+
+    & > ul {
+      display: flex;
+      gap: 4rem;
+
+      & > li {
+        list-style: none;
+      }
+    }
+  }
+`;
 
 const Header = () => {
   return (
     <div className="header">
-      <div className={styles.wrapper}>
+      <Wrapper>
         <a href="#">Website Logo Here</a>
-        <nav className={styles.nav}>
+        <nav className="nav">
           <ul>
             <li>
               <Link href={`/`}>
@@ -26,7 +46,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </Wrapper>
     </div>
   );
 };
