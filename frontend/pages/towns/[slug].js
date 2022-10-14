@@ -2,6 +2,29 @@ import { normalize } from "../../utils/normalize";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout/Layout";
+import Post from "../../components/Posts/Post";
+import styled from "@emotion/styled";
+import Sidebar from "../../components/Sidebar/Sidebar";
+
+let CategoryByCity = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  gap: 15px;
+`;
+
+let Posts = styled("div")`
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  & > h2 {
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+    margin: 0 0 1rem;
+    padding: 1rem 0;
+    color: #fff;
+  }
+`;
 
 export default function Town({ postsByTown }) {
   const router = useRouter();
@@ -13,9 +36,14 @@ export default function Town({ postsByTown }) {
         <Link href={`/`}>
           <a>Go Home</a>
         </Link>
-        <h2>{`List of Business in ${slug}`}</h2>
-        {postsByTown &&
-          postsByTown.map((post) => <h2 key={post.id}>{post.Title}</h2>)}
+        <CategoryByCity>
+          <Posts>
+            <h2>{`List of Business in ${slug}`}</h2>
+            {postsByTown &&
+              postsByTown.map((post) => <Post key={post.id} post={post} />)}
+          </Posts>
+          <Sidebar />
+        </CategoryByCity>
       </div>
     </Layout>
   );

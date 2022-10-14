@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Post({ post }) {
   return (
-    <div>
+    <div className="posts">
       <Link href={`/`}>
         <a>Go Home</a>
       </Link>

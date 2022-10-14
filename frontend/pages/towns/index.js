@@ -15,21 +15,20 @@ let Towns = styled("div")`
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
   }
 `;
 
 export default function Post({ towns }) {
-  const [isServer, setIsServer] = useState(true);
-  if (process.env === undefined) {
-    return "http://localhost:1338";
-  }
   return (
     <Layout>
       <Link href={`/`}>
         <a>Go Home</a>
       </Link>
       {/* Show Town Categories */}
+      <h2>List of Town Categories</h2>
       <Towns>
         {towns &&
           towns.map((town) => (
