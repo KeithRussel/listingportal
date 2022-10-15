@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { theme } from "../../utils/theme";
 
 let Wrapper = styled("div")`
   display: flex;
@@ -17,6 +18,15 @@ let Wrapper = styled("div")`
 
       & > li {
         list-style: none;
+        a {
+          color: #1a1a1a;
+          font-weight: bold;
+
+          :hover {
+            color: ${theme.colors.primaryDark};
+            transition: 0.3s;
+          }
+        }
       }
     }
   }

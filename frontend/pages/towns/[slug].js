@@ -33,9 +33,9 @@ export default function Town({ postsByTown }) {
   return (
     <Layout>
       <div>
-        <Link href={`/`}>
+        {/* <Link href={`/`}>
           <a>Go Home</a>
-        </Link>
+        </Link> */}
         <CategoryByCity>
           <Posts>
             <h2>{`List of Business in ${slug}`}</h2>

@@ -14,8 +14,12 @@ let PostCard = styled("div")`
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   & > .postcard__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     & > img {
       height: 120px;
+      border-radius: 50%;
     }
   }
 
