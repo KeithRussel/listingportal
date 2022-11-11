@@ -1,0 +1,23 @@
+import React from "react";
+import ListItem from "./ListItem";
+import styled from "@emotion/styled";
+
+const Wrapper = styled("div")`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+`;
+
+const LatestList = ({ posts }) => {
+  console.log(posts);
+  return (
+    <>
+      <h2>Latest Listing</h2>
+      <Wrapper>
+        {posts && posts.map((post) => <ListItem post={post} />)}
+      </Wrapper>
+    </>
+  );
+};
+
+export default LatestList;
