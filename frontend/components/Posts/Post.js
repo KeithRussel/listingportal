@@ -35,13 +35,24 @@ const Post = ({ post }) => {
     <PostCard>
       <div className="postcard__head">
         <h2>{post.Title}</h2>
-        <img src="https://via.placeholder.com/250" />
+        {post.Logo ? (
+          <img src={post.Logo} />
+        ) : (
+          <img src="https://via.placeholder.com/250" />
+        )}
       </div>
       <div className="postcard__body">
         <div className="content">{post.Content}</div>
         <div className="address">Address: {post.Address}</div>
         <div className="opening">Opening: {post.Opening}</div>
         <div className="closing">Closing: {post.Closing}</div>
+        <div className="website">
+          Website:{" "}
+          <a href={post.Website} target="_blank">
+            {post.Website}
+          </a>
+        </div>
+        <div className="website">Email: {post.Email}</div>
       </div>
     </PostCard>
   );
