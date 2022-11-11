@@ -47,6 +47,22 @@
       "relation": "manyToOne",
       "target": "api::town.town",
       "inversedBy": "posts"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
