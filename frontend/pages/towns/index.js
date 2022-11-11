@@ -35,7 +35,9 @@ export default function Post({ towns }) {
             <Link key={town.id} href={`/towns/${town.Town}`} passHref>
               <a
                 style={{
-                  backgroundImage: `url(${process.env.SITEURL}${town.Image.url})`,
+                  backgroundImage:
+                    town.Image &&
+                    `url(${process.env.SITEURL}${town.Image.url})`,
                 }}
               >
                 <div>
