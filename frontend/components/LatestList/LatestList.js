@@ -14,7 +14,8 @@ const LatestList = ({ posts }) => {
     <>
       <h2>Latest Listing</h2>
       <Wrapper>
-        {posts && posts.map((post) => <ListItem post={post} />)}
+        {posts &&
+          posts.map((post, index) => <ListItem post={post} key={index} />)}
       </Wrapper>
     </>
   );

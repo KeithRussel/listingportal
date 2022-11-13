@@ -42,17 +42,19 @@ const Post = ({ post }) => {
         )}
       </div>
       <div className="postcard__body">
-        <div className="content">{post.Content}</div>
-        <div className="address">Address: {post.Address}</div>
-        <div className="opening">Opening: {post.Opening}</div>
-        <div className="closing">Closing: {post.Closing}</div>
-        <div className="website">
-          Website:{" "}
-          <a href={post.Website} target="_blank">
-            {post.Website}
-          </a>
-        </div>
-        <div className="website">Email: {post.Email}</div>
+        {post.Content && <div className="content">{post.Content}</div>}
+        {post.Address && <div className="address">Address: {post.Address}</div>}
+        {post.Opening && <div className="opening">Opening: {post.Opening}</div>}
+        {post.Closing && <div className="closing">Closing: {post.Closing}</div>}
+        {post.Website && (
+          <div className="website">
+            Website:{" "}
+            <a href={post.Website} target="_blank">
+              {post.Website}
+            </a>
+          </div>
+        )}
+        {post.Email && <div className="website">Email: {post.Email}</div>}
       </div>
     </PostCard>
   );

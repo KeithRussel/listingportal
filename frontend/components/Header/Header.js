@@ -36,7 +36,9 @@ const Header = () => {
   return (
     <div className="header">
       <Wrapper>
-        <a href="#">Website Logo Here</a>
+        <Link href={`/`}>
+          <a>Negosyo Directory</a>
+        </Link>
         <nav className="nav">
           <ul>
             <li>
