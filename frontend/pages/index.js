@@ -16,12 +16,14 @@ export default function Home({ posts }) {
   );
 }
 
+const { BASE_URL } = process.env;
+
 export async function getStaticProps() {
   console.log("this is server side render");
 
   // get posts from our api
   const res = await fetch(
-    `${process.env.SITEURL}/api/posts?=sort[0]=createdAt&pagination[page]=1&pagination[pageSize]=10&populate=*`
+    `${BASE_URL}/api/posts?=sort[0]=createdAt&pagination[page]=1&pagination[pageSize]=10&populate=*`
   );
 
   const results = await res.json();

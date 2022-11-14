@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import Image from "next/image";
 
 const Item = styled("div")`
   border: 1px solid gray;
@@ -15,13 +16,15 @@ const Item = styled("div")`
   }
 `;
 
+const { BASE_URL } = process.env;
+
 const LatestItem = ({ post }) => {
   return (
     <Item>
       <div className="postcard__head">
         <h2>{post.Title}</h2>
         {post.Logo ? (
-          <img src={`${process.env.SITEURL}${post.Logo.url}`} />
+          <Image src={`${BASE_URL}${post.Logo.url}`} width={500} height={500} />
         ) : (
           <img src="https://via.placeholder.com/250" />
         )}

@@ -3,7 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["http://localhost:1338"],
+    unoptimized: true,
+    allowFutureImage: true,
+    path: "/_next/image",
+    domains: ["via.placeholder.com", "listing-app-zzws6.ondigitalocean.app"],
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL,
   },
 };
 
