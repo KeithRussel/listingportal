@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true,
-    // allowFutureImage: true,
     path: "/_next/image",
     domains: ["via.placeholder.com", "listing-app-zzws6.ondigitalocean.app"],
   },
