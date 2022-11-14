@@ -54,7 +54,7 @@ export default function Post({ towns }) {
 // for each individual page: get the data for individual page
 export async function getStaticProps() {
   const res = await fetch(
-    `http://localhost:1338/api/towns?populate[Image][posts]`
+    `${process.env.SITEURL}/api/towns?populate[Image][posts]`
   );
 
   const results = await res.json();

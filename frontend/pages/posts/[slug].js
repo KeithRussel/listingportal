@@ -14,7 +14,7 @@ export default function Post({ post }) {
 
 // tell next.js how many pages they are
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:1338/api/posts");
+  const res = await fetch(`${process.env.SITEURL}/api/posts`);
   const results = await res.json();
   // Should integrate the normalize function to trigger the deep objects in API
   const posts = normalize(results);
@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
 
   //   const res = await fetch(`http://localhost:1338/api/posts?Slug=${slug}`);
   const res = await fetch(
-    `http://localhost:1338/api/posts?filters[Slug][$eq]=${slug}`
+    `${process.env.SITEURL}/api/posts?filters[Slug][$eq]=${slug}`
   );
 
   const results = await res.json();

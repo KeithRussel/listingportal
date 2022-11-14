@@ -21,7 +21,7 @@ export async function getStaticProps() {
 
   // get posts from our api
   const res = await fetch(
-    "http://localhost:1338/api/posts?=sort[0]=createdAt&pagination[page]=1&pagination[pageSize]=10&populate=*"
+    `${process.env.SITEURL}/api/posts?=sort[0]=createdAt&pagination[page]=1&pagination[pageSize]=10&populate=*`
   );
 
   const results = await res.json();
