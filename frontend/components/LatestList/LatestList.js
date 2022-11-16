@@ -6,6 +6,10 @@ const Wrapper = styled("div")`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const LatestList = ({ posts }) => {
