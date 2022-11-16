@@ -27,6 +27,28 @@ let HeroMain = styled("div")`
     height: 500px;
     border-radius: 50%;
   }
+
+  @media (max-width: 450px) {
+    height: 100vh;
+
+    & > .hero__right {
+      display: none;
+    }
+
+    & > .hero__right img {
+      height: auto;
+    }
+
+    & > .hero__left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & > .hero__left h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
 `;
 
 let Services = styled("div")`
