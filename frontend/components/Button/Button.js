@@ -7,6 +7,12 @@ let PrimaryBtn = styled("a")`
   color: var(--primary-light);
   cursor: pointer;
   padding: 1rem;
+
+  @media (max-width: 450px) {
+    width: 150px;
+    margin: auto;
+    text-align: center;
+  }
 `;
 
 const Button = ({ label, color, btnLink }) => {
