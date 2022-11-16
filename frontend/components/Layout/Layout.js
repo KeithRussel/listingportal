@@ -5,6 +5,10 @@ import styled from "@emotion/styled";
 let Container = styled("div")`
   max-width: 70%;
   margin: auto;
+
+  @media (max-width: 450px) {
+    max-width: 90%;
+  }
 `;
 
 const Layout = ({ children }) => {
