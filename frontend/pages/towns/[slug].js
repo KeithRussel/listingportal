@@ -26,7 +26,7 @@ let Posts = styled("div")`
   }
 `;
 
-const { BASE_URL } = process.env;
+const { APP_URL } = process.env;
 
 export default function Town({ postsByTown }) {
   const router = useRouter();
@@ -53,7 +53,7 @@ export default function Town({ postsByTown }) {
 
 // tell next.js how many pages they are
 export async function getStaticPaths() {
-  const res = await fetch(`${BASE_URL}/api/towns`);
+  const res = await fetch(`${APP_URL}/api/towns`);
   const results = await res.json();
   // Should integrate the normalize function to trigger the deep objects in API
   const towns = normalize(results);
@@ -74,7 +74,7 @@ export async function getStaticProps({ params }) {
 
   //   const res = await fetch(`http://localhost:1338/api/posts?Slug=${slug}`);
   const res = await fetch(
-    `${BASE_URL}/api/posts?populate=Logo&filters[Town][Town][$eq]=${slug}`
+    `${APP_URL}/api/posts?populate=Logo&filters[Town][Town][$eq]=${slug}`
   );
 
   const results = await res.json();

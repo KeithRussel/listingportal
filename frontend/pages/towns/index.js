@@ -21,7 +21,7 @@ let Towns = styled("div")`
   }
 `;
 
-const { BASE_URL } = process.env;
+const { APP_URL } = process.env;
 
 export default function Post({ towns }) {
   return (
@@ -38,7 +38,7 @@ export default function Post({ towns }) {
               <a
                 style={{
                   backgroundImage:
-                    town.Image && `url(${BASE_URL}${town.Image.url})`,
+                    town.Image && `url(${APP_URL}${town.Image.url})`,
                 }}
               >
                 <div>
@@ -54,7 +54,7 @@ export default function Post({ towns }) {
 
 // for each individual page: get the data for individual page
 export async function getStaticProps() {
-  const res = await fetch(`${BASE_URL}/api/towns?populate[Image][posts]`);
+  const res = await fetch(`${APP_URL}/api/towns?populate[Image][posts]`);
 
   const results = await res.json();
   // Should integrate the normalize function to trigger the deep objects in API
