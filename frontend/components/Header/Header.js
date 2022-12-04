@@ -20,7 +20,7 @@ let Wrapper = styled("div")`
       & > li {
         list-style: none;
         a {
-          color: #1a1a1a;
+          color: #2f3334;
           font-weight: bold;
 
           :hover {
