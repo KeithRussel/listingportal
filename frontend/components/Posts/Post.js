@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { theme } from "../../utils/theme";
+import Image from "next/image";
 
 let PostCard = styled("div")`
   display: grid;
@@ -30,13 +31,15 @@ let PostCard = styled("div")`
   }
 `;
 
+const { BASE_URL } = process.env;
+
 const Post = ({ post }) => {
   return (
     <PostCard>
       <div className="postcard__head">
         <h2>{post.Title}</h2>
         {post.Logo ? (
-          <img src={post.Logo} />
+          <Image src={`${BASE_URL}${post.Logo.url}`} width={500} height={500} />
         ) : (
           <img src="https://via.placeholder.com/250" />
         )}
