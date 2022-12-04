@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const Item = styled("div")`
-  border: 1px solid gray;
+  border: 1px solid #2f3334;
   display: grid;
   justify-content: center;
   padding: 1rem;

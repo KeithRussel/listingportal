@@ -12,7 +12,7 @@ let SideBar = styled("div")`
   h2 {
     width: 100%;
     text-align: center;
-    background-color: gray;
+    background-color: #2f3334;
     margin: 0 0 1rem;
     padding: 1rem 0;
     color: #fff;
