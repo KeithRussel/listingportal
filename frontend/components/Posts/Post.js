@@ -31,7 +31,7 @@ let PostCard = styled("div")`
   }
 `;
 
-const { APP_URL } = process.env;
+const { BASE_URL } = process.env;
 
 const Post = ({ post }) => {
   return (
@@ -39,7 +39,7 @@ const Post = ({ post }) => {
       <div className="postcard__head">
         <h2>{post.Title}</h2>
         {post.Logo ? (
-          <Image src={`${APP_URL}${post.Logo.url}`} width={500} height={500} />
+          <Image src={`${BASE_URL}${post.Logo.url}`} width={500} height={500} />
         ) : (
           <img src="https://via.placeholder.com/250" />
         )}
