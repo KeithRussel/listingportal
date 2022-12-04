@@ -19,7 +19,7 @@ let Posts = styled("div")`
   & > h2 {
     width: 100%;
     text-align: center;
-    background-color: gray;
+    background-color: #2f3334;
     margin: 0 0 1rem;
     padding: 1rem 0;
     color: #fff;
@@ -74,7 +74,7 @@ export async function getStaticProps({ params }) {
 
   //   const res = await fetch(`http://localhost:1338/api/posts?Slug=${slug}`);
   const res = await fetch(
-    `${BASE_URL}/api/posts?filters[Town][Town][$eq]=${slug}`
+    `${BASE_URL}/api/posts?populate=Logo&filters[Town][Town][$eq]=${slug}`
   );
 
   const results = await res.json();
@@ -82,6 +82,7 @@ export async function getStaticProps({ params }) {
   const postsByTown = normalize(results);
 
   //   const post = data[0];
+  console.log(postsByTown);
 
   return {
     props: { postsByTown },
